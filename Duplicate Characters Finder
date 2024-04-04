@@ -1,0 +1,22 @@
+import java.util.HashSet;
+
+public class DuplicateCharactersFinder {
+    public static void findDuplicateCharacters(String str) {
+        HashSet<Character> set = new HashSet<>();
+        HashSet<Character> duplicates = new HashSet<>();
+        for (char ch : str.toCharArray()) {
+            if (!set.add(ch)) {
+                duplicates.add(ch);
+            }
+        }
+        System.out.println("Duplicate characters in the string:");
+        for (char ch : duplicates) {
+            System.out.println(ch);
+        }
+    }
+
+    public static void main(String[] args) {
+        String str = "Coat cut by cutter";
+        findDuplicateCharacters(str);
+    }
+}
